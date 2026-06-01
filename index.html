@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재미로 보는 캠퍼스 구하기 | 대학·학과 추천 테스트</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
+    <style>
+        #mbti-badge {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 10px;
+            border: 1px solid #bae6fd;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="main-page" class="page active">
+            <div class="logo-area">🎓</div>
+            <h1>유니버스-티</h1>
+            <p class="subtitle">나의 성격으로 알아보는 가짜 대학 추천</p>
+            <div class="character-box">
+                <span class="char">🐣</span>
+            </div>
+            <p class="counter">이미 <span>12,345</span>명이 입학 수속을 마쳤어요!</p>
+            <button class="btn btn-start" onclick="startTest()">내 미래 캠퍼스 알아보기</button>
+        </div>
+
+        <div id="quiz-page" class="page">
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+                <span class="progress-icon" id="progress-icon">🏃</span>
+            </div>
+            <div class="question-box">
+                <h2 id="question-text">질문 텍스트가 들어가는 곳</h2>
+            </div>
+            <div class="answer-box">
+                <button class="btn btn-answer" id="answer-a" onclick="selectAnswer('A')">선택지 A</button>
+                <button class="btn btn-answer" id="answer-b" onclick="selectAnswer('B')">선택지 B</button>
+            </div>
+        </div>
+
+        <div id="loading-page" class="page">
+            <div class="spinner">⏳</div>
+            <h2>학생증 발급 기계 가동 중...</h2>
+            <p>교수님에게 로비하는 중입니다. 잠시만 기다려주세요!</p>
+        </div>
+
+        <div id="result-page" class="page">
+            <div class="certificate">
+                <div class="cert-header">🎉 합격통지서 🎉</div>
+                <div class="cert-body">
+                    <div id="mbti-badge">나의 성향: 데이터 분석 중</div>
+                    <p class="cert-name">귀하는 본교의 평가 기준을 완벽히 만족하였기에 아래 학과의 입학을 허가합니다.</p>
+                    <div class="university-title" id="univ-name">대학 이름 예정</div>
+                    <div class="department-title" id="dept-name">학과 이름 예정</div>
+                    
+                    <div class="divider"></div>
+                    
+                    <div class="features">
+                        <h3>🏫 학과 특징 안내</h3>
+                        <ul id="features-list">
+                            </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="compatibility-box">
+                <div class="comp-item good">
+                    <span>🤝 찰떡 궁합</span>
+                    <p id="match-good">궁합 대학 학과</p>
+                </div>
+                <div class="comp-item bad">
+                    <span>⚡ 파멸 궁합</span>
+                    <p id="match-bad">궁합 대학 학과</p>
+                </div>
+            </div>
+
+            <div class="action-box">
+                <button class="btn btn-share" onclick="shareResult()">카카오톡 공유하기 (링크 복사)</button>
+                <button class="btn btn-restart" onclick="restartTest()">다시 테스트하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
